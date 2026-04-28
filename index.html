@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise SRT Analytics | 6 AI Models Evaluated</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        space: {
+                            900: '#0b1121',
+                            800: '#151e32',
+                            700: '#1f2943',
+                        },
+                        neon: {
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            purple: '#8b5cf6',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e',
+                            orange: '#f97316'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Chosen Palette: Deep Space & Neon Accents (Background: #0b1121, Accents: Emerald, Cyan, Orange, Slate) -->
+    <!-- Application Structure Plan: Dark mode enterprise layout. Section 1: 4-Column Donut Charts for top models. Section 2: Radar and CPS Bar Charts showing comparative metrics. Section 3: 2D Behaviour Matrix mapping Formality vs Pedagogy. Section 4: Deep Dive Exhibits analysing the literal translation flaw in GPT-4o vs the elegance of GPT-5.5 and Gemini. -->
+    <!-- Visualisation & Content Choices: 1. Overview -> Goal: Show 4 models -> Viz: 4 Donut Charts. 2. Pacing -> Goal: Prove speed -> Viz: Horizontal Bar Chart with GPT-4o included. 3. Tone Flaw -> Goal: Highlight literal translation -> Viz: Exhibit Tab 2 highlighting "sparshbhari". Confirming NO SVG/Mermaid used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            background-color: #0b1121;
+            color: #94a3b8;
+        }
+        
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+
+        .chart-container-large {
+            position: relative; width: 100%; max-width: 700px; margin: 0 auto; height: 350px; max-height: 400px;
+        }
+        .chart-container-medium {
+            position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 280px; max-height: 350px;
+        }
+        .chart-container-small {
+            position: relative; width: 100%; max-width: 180px; margin: 0 auto; height: 140px; max-height: 160px;
+        }
+
+        .glass-card {
+            background: rgba(21, 30, 50, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .tab-btn {
+            background-color: transparent; color: #64748b; border-bottom: 2px solid transparent; transition: all 0.3s ease;
+        }
+        .tab-btn:hover { color: #e2e8f0; }
+        .tab-btn.active {
+            color: #10b981; border-bottom: 2px solid #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+        }
+
+        .matrix-grid {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            position: relative;
+        }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0b1121; }
+        ::-webkit-scrollbar-thumb { background: #1f2943; border-radius: 3px; }
+    </style>
+</head>
+<body class="selection:bg-neon-orange selection:text-space-900 pb-20 antialiased">
+
+    <nav class="glass-card sticky top-0 z-50 border-b border-space-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-neon-orange to-neon-purple flex items-center justify-center text-white font-bold text-xl">
+                        &#9863;
+                    </div>
+                    <div class="text-xl font-heading font-black text-white tracking-widest uppercase">
+                        AI<span class="text-neon-orange font-light"> Audit</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    <a href="#dashboards" class="hover:text-neon-orange transition-colors">Dashboards</a>
+                    <a href="#infographics" class="hover:text-neon-orange transition-colors">Visual Matrix</a>
+                    <a href="#evidence" class="hover:text-neon-orange transition-colors">Linguistic Evidence</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-20">
+
+        <header class="text-center max-w-4xl mx-auto">
+            <div class="inline-block px-4 py-1 mb-6 rounded-full border border-neon-orange/30 bg-neon-orange/10 text-neon-orange text-xs font-bold tracking-widest uppercase">
+                6 LLM Variants Audited
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 leading-tight tracking-tight">
+                Evaluating AI Translation for <br/> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-emerald to-neon-orange">Educational ILMs</span>
+            </h1>
+            <p class="text-lg text-slate-400 font-light max-w-3xl mx-auto">
+                Comprehensive tracking of pedagogical utility, reading constraints (CPS), and academic register across Gemini, GPT-5.5, Minimax, Gemma-4, and GPT-4o.
+            </p>
+        </header>
+
+        <!-- DASHBOARDS: Top 4 Models -->
+        <section id="dashboards" class="scroll-mt-24">
+            <h2 class="text-2xl font-heading font-bold text-white mb-8 border-b border-space-700 pb-3 flex items-center gap-3">
+                <span class="text-neon-emerald">&#11044;</span> Top 4 Ranked Models
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Rank 1 -->
+                <div class="glass-card rounded-2xl p-5 text-center relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-emerald to-transparent"></div>
+                    <div class="absolute top-3 right-3 text-[10px] font-bold bg-neon-emerald/20 text-neon-emerald px-2 py-1 rounded">RANK 1</div>
+                    <div class="chart-container-small">
+                        <canvas id="scoreChartC"></canvas>
+                    </div>
+                    <h3 class="text-lg font-heading font-bold text-white mt-4">Set C: Gemini 3</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Fast</p>
+                    <p class="text-[13px] mt-3 text-slate-300 leading-snug">Unmatched bilingual scaffolding and optimised character pacing.</p>
+                </div>
+
+                <!-- Rank 2 -->
+                <div class="glass-card rounded-2xl p-5 text-center relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-cyan to-transparent"></div>
+                    <div class="absolute top-3 right-3 text-[10px] font-bold bg-neon-cyan/20 text-neon-cyan px-2 py-1 rounded">RANK 2</div>
+                    <div class="chart-container-small">
+                        <canvas id="scoreChartB"></canvas>
+                    </div>
+                    <h3 class="text-lg font-heading font-bold text-white mt-4">Set B: GPT 5.5+</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Pure Hindi</p>
+                    <p class="text-[13px] mt-3 text-slate-300 leading-snug">Flawless grammatical flow and highly accurate academic register.</p>
+                </div>
+
+                <!-- Rank 3 -->
+                <div class="glass-card rounded-2xl p-5 text-center relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-orange to-transparent"></div>
+                    <div class="absolute top-3 right-3 text-[10px] font-bold bg-neon-orange/20 text-neon-orange px-2 py-1 rounded">RANK 3</div>
+                    <div class="chart-container-small">
+                        <canvas id="scoreChartF"></canvas>
+                    </div>
+                    <h3 class="text-lg font-heading font-bold text-white mt-4">Set F: GPT-4o</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Pure Hindi</p>
+                    <p class="text-[13px] mt-3 text-slate-300 leading-snug">Extremely fast-paced and fluent, but suffers from some literal translation quirks.</p>
+                </div>
+
+                <!-- Rank 4 -->
+                <div class="glass-card rounded-2xl p-5 text-center relative opacity-80">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-slate-500 to-transparent"></div>
+                    <div class="chart-container-small">
+                        <canvas id="scoreChartD"></canvas>
+                    </div>
+                    <h3 class="text-lg font-heading font-bold text-white mt-4">Set D: Gemma-4</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Offline LLM</p>
+                    <p class="text-[13px] mt-3 text-slate-300 leading-snug">Competent structure, but uses colloquialisms unsuitable for ILMs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARDS: Radar & Bar Charts -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Multidimensional Radar -->
+            <div class="glass-card rounded-2xl p-6 md:p-8">
+                <h3 class="text-lg font-heading font-bold text-white mb-2">Capabilities Matrix</h3>
+                <p class="text-xs text-slate-400 mb-6">Comparing dimensions of the top 3 AI models (Gemini, GPT-5.5+, GPT-4o).</p>
+                <div class="chart-container-medium">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+
+            <!-- CPS Optimisation Bar Chart -->
+            <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-lg font-heading font-bold text-white">Subtitle CPS Optimisation</h3>
+                    <span class="text-2xl text-neon-orange">&#9202;</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-6">Character count comparison for Line 7. Lower is better for reading speed.</p>
+                <div class="chart-container-medium flex-grow">
+                    <canvas id="cpsBarChart"></canvas>
+                </div>
+                <div class="mt-4 text-sm text-slate-300 bg-space-900/50 p-3 rounded border border-space-700">
+                    <strong>Insight:</strong> <span class="text-neon-emerald font-bold">Gemini 3 (107 chars)</span> is the most concise. The new <span class="text-neon-orange font-bold">GPT-4o (119 chars)</span> also performs exceptionally well for reading speed, easily beating older variants.
+                </div>
+            </div>
+        </section>
+
+        <!-- INFOGRAPHIC: 2D Matrix -->
+        <section id="infographics" class="scroll-mt-24">
+            <h2 class="text-2xl font-heading font-bold text-white mb-8 border-b border-space-700 pb-3 flex items-center gap-3">
+                <span class="text-neon-purple">&#10034;</span> Linguistic Behaviour Matrix
+            </h2>
+            
+            <div class="glass-card rounded-2xl p-8 relative">
+                <p class="text-slate-400 mb-8 max-w-3xl text-sm">Mapping AI models. Target quadrant: High Academic Formality + High Pedagogical Value.</p>
+
+                <div class="w-full max-w-4xl mx-auto relative h-[450px] matrix-grid border-l-2 border-b-2 border-space-700">
+                    
+                    <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-[10px] font-bold uppercase tracking-widest text-slate-500">Pedagogical Value (Scaffolding / Bridging) &rarr;</div>
+                    <div class="absolute top-1/2 -left-14 transform -translate-y-1/2 -rotate-90 text-[10px] font-bold uppercase tracking-widest text-slate-500 w-64 text-center">&larr; Academic Formality (Register)</div>
+
+                    <!-- Target Zone -->
+                    <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-neon-emerald/5 rounded-bl-3xl"></div>
+                    
+                    <!-- Set C -->
+                    <div class="absolute top-[20%] left-[85%] transform -translate-x-1/2 -translate-y-1/2 z-20">
+                        <div class="w-6 h-6 rounded-full bg-neon-emerald border-4 border-[#0b1121] shadow-[0_0_20px_rgba(16,185,129,0.8)] animate-pulse"></div>
+                        <div class="absolute top-8 left-1/2 transform -translate-x-1/2 bg-space-800 border border-neon-emerald/50 px-3 py-1 rounded text-xs text-white whitespace-nowrap shadow-lg">
+                            <strong class="text-neon-emerald block text-center">Set C: Gemini 3</strong>
+                        </div>
+                    </div>
+
+                    <!-- Set B -->
+                    <div class="absolute top-[10%] left-[45%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+                        <div class="w-5 h-5 rounded-full bg-neon-cyan border-4 border-[#0b1121] shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
+                        <div class="absolute top-6 left-1/2 transform -translate-x-1/2 text-center w-32">
+                            <span class="text-xs font-bold text-white">Set B: GPT 5.5+</span>
+                        </div>
+                    </div>
+
+                    <!-- Set F (GPT-4o) NEW -->
+                    <div class="absolute top-[25%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+                        <div class="w-5 h-5 rounded-full bg-neon-orange border-4 border-[#0b1121] shadow-[0_0_15px_rgba(249,115,22,0.6)]"></div>
+                        <div class="absolute top-6 left-1/2 transform -translate-x-1/2 text-center w-32">
+                            <span class="text-xs font-bold text-white">Set F: GPT-4o</span>
+                            <span class="text-[10px] text-slate-400 block">High Fluency, Occasional Literalism</span>
+                        </div>
+                    </div>
+
+                    <!-- Set E -->
+                    <div class="absolute top-[5%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+                        <div class="w-4 h-4 rounded-full bg-neon-rose border-4 border-[#0b1121]"></div>
+                        <div class="absolute top-6 left-1/2 transform -translate-x-1/2 text-center w-32">
+                            <span class="text-xs font-bold text-white">Set E: Minimax</span>
+                        </div>
+                    </div>
+
+                    <!-- Set A -->
+                    <div class="absolute top-[70%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+                        <div class="w-4 h-4 rounded-full bg-slate-500 border-4 border-[#0b1121]"></div>
+                        <div class="absolute top-6 left-1/2 transform -translate-x-1/2 text-center w-32">
+                            <span class="text-xs font-bold text-white">Set A: GPT Mixed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVIDENTIARY ANALYSIS -->
+        <section id="evidence" class="scroll-mt-24">
+            <h2 class="text-2xl font-heading font-bold text-white mb-8 border-b border-space-700 pb-3 flex items-center gap-3">
+                <span class="text-neon-cyan">&#9782;</span> Evidentiary Deep Dive (GPT-4o vs Top Models)
+            </h2>
+
+            <div class="glass-card rounded-2xl overflow-hidden border border-space-700 shadow-2xl">
+                <div class="flex overflow-x-auto bg-space-900/80 border-b border-space-700 p-2 gap-2" id="evidence-tabs">
+                    <button onclick="loadExhibit('exhibit1')" class="tab-btn active px-6 py-3 rounded-lg font-heading font-bold text-sm whitespace-nowrap">
+                        Ex. 1: Bridging Concepts
+                    </button>
+                    <button onclick="loadExhibit('exhibit2')" class="tab-btn px-6 py-3 rounded-lg font-heading font-bold text-sm whitespace-nowrap">
+                        Ex. 2: AI Literalism Flaw
+                    </button>
+                    <button onclick="loadExhibit('exhibit3')" class="tab-btn px-6 py-3 rounded-lg font-heading font-bold text-sm whitespace-nowrap">
+                        Ex. 3: Subtitle Pacing
+                    </button>
+                </div>
+
+                <div class="p-6 md:p-10" id="exhibit-content-area">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-space-700 mt-20 py-10 bg-space-900/50">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-600 text-xs font-mono uppercase tracking-widest">
+            <p>&copy; 2026 AI Subtitle Localisation Audit by Arkadeepta</p>
+        </div>
+    </footer>
+
+    <script>
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = "'Figtree', sans-serif";
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.05)';
+
+        function createDonut(id, score, colorHex, label) {
+            const ctx = document.getElementById(id).getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Score', 'Deficit'],
+                    datasets: [{
+                        data: [score, 100 - score],
+                        backgroundColor: [colorHex, 'rgba(255, 255, 255, 0.05)'],
+                        borderWidth: 0, hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, cutout: '75%',
+                    plugins: { legend: { display: false }, tooltip: { enabled: false } }
+                },
+                plugins: [{
+                    id: 'textCenter',
+                    beforeDraw: function(chart) {
+                        var width = chart.width, height = chart.height, ctx = chart.ctx;
+                        ctx.restore();
+                        var fontSize = (height / 80).toFixed(2);
+                        ctx.font = "bold " + fontSize + "em Montserrat";
+                        ctx.textBaseline = "middle"; ctx.fillStyle = "#ffffff";
+                        var text = score + "%", textX = Math.round((width - ctx.measureText(text).width) / 2), textY = height / 2;
+                        ctx.fillText(text, textX, textY); ctx.save();
+                    }
+                }]
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createDonut('scoreChartC', 96, '#10b981', 'Set C');
+            createDonut('scoreChartB', 88, '#06b6d4', 'Set B');
+            createDonut('scoreChartF', 82, '#f97316', 'Set F');
+            createDonut('scoreChartD', 75, '#64748b', 'Set D');
+        });
+
+        // Radar Chart including F
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['Pedagogy', 'Register/Tone', 'Pacing (CPS)', 'Grammar', 'Accuracy'],
+                datasets: [
+                    {
+                        label: 'Gemini 3 (Set C)',
+                        data: [98, 92, 95, 90, 100],
+                        backgroundColor: 'rgba(16, 185, 129, 0.2)', borderColor: '#10b981',
+                        pointBackgroundColor: '#10b981', borderWidth: 2,
+                    },
+                    {
+                        label: 'GPT 5.5+ (Set B)',
+                        data: [40, 98, 90, 98, 85],
+                        backgroundColor: 'rgba(6, 182, 212, 0.1)', borderColor: '#06b6d4',
+                        pointBackgroundColor: '#06b6d4', borderWidth: 2,
+                    },
+                    {
+                        label: 'GPT-4o (Set F)',
+                        data: [40, 85, 93, 80, 85], // Docked for literal translation flaws
+                        backgroundColor: 'rgba(249, 115, 22, 0.2)', borderColor: '#f97316',
+                        pointBackgroundColor: '#f97316', borderWidth: 2, borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' }, grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { font: { family: "'Montserrat', sans-serif", size: 10, weight: "bold" }, color: '#cbd5e1' },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: 15, color: '#e2e8f0', font: {size: 11} } },
+                    tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.95)', titleFont: { size: 13, family: 'Montserrat' }, padding: 10 }
+                }
+            }
+        });
+
+        // CPS Bar Chart including F
+        const ctxBar = document.getElementById('cpsBarChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Set C (Gemini)', 'Set F (GPT-4o)', 'Set B (GPT-5.5)', 'Set A (GPT-Mix)', 'Set D (Gemma)'],
+                datasets: [{
+                    label: 'Character Count',
+                    data: [107, 119, 125, 133, 152],
+                    backgroundColor: ['#10b981', '#f97316', '#06b6d4', '#475569', '#475569'],
+                    borderRadius: 4, barPercentage: 0.6
+                }]
+            },
+            options: {
+                indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { beginAtZero: true, title: { display: true, text: 'Total Characters (Lower = Faster)', color: '#64748b', font: {size: 10} } },
+                    y: { ticks: { font: { family: 'Montserrat', weight: 'bold' }, color: '#e2e8f0' } }
+                },
+                plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.95)', padding: 10 } }
+            }
+        });
+
+        // Evidence Tab Logic
+        const exhibitData = {
+            'exhibit1': {
+                title: "Domain Terminology & Scaffolding",
+                source: "We learned how open letters help express your ideas clearly and how petitions show public support.",
+                cards: [
+                    {
+                        model: "Set C (Gemini 3)", badge: "WINNER", badgeColor: "text-neon-emerald border-neon-emerald",
+                        text: "Humne seekha ki khula patra (open letter) aapke vichaaron ko spasht roop se vyakt karne mein kaise madad karta hai...",
+                        analysis: "Perfect educational design. Uses brackets to link the Hindi translation back to the English source."
+                    },
+                    {
+                        model: "Set F (GPT-4o)", badge: "PURE HINDI", badgeColor: "text-neon-orange border-neon-orange",
+                        text: "Humne seekha ki khule patra aapki baat ko spasht roop se vyakt karne mein kaise madad kar sakte hain...",
+                        analysis: "Very fluent pure Hindi translation. Identical in approach to Set B, bypassing educational scaffolding."
+                    },
+                    {
+                        model: "Set A (GPT-Mix)", badge: "REJECTED", badgeColor: "text-slate-500 border-slate-600",
+                        text: "Humne seekha ki kaise open letters aapko apne vicharon ko...",
+                        analysis: "Relies on transliteration. Assumes the student already knows the English vocabulary."
+                    }
+                ]
+            },
+            'exhibit2': {
+                title: "The Flaw of AI Literalism",
+                source: "A respectful tone, a clear message, evidence to support your argument, a direct call to action, and a touch of politeness.",
+                cards: [
+                    {
+                        model: "Set B (GPT 5.5 Plus Pure)", badge: "WINNER", badgeColor: "text-neon-cyan border-neon-cyan",
+                        text: "...kaarvaai ke liye seedha aahvaan aur shishtata ka sparsh.",
+                        analysis: "Brilliant. Translates 'touch of politeness' idiomatically as 'shishtata ka sparsh', maintaining academic dignity."
+                    },
+                    {
+                        model: "Set F (GPT-4o)", badge: "LITERAL FLAW", badgeColor: "text-neon-rose border-neon-rose",
+                        text: "...kaarvaai ka ek seedha aahvaan aur ek sparshbhari vinamrata.",
+                        analysis: "CRITICAL FLAW: 'Sparshbhari' literally means 'full of physical touch'. Translating 'a touch of politeness' literally results in an awkward, non-academic phrase."
+                    },
+                    {
+                        model: "Set C (Gemini 3)", badge: "CAPABLE", badgeColor: "text-neon-emerald border-neon-emerald",
+                        text: "...seedha kaarvaai ka aahvaan aur vinamrata ka sparsh.",
+                        analysis: "Uses 'vinamrata ka sparsh'. Similar to Set B, it correctly adapts the idiom without sounding robotic."
+                    }
+                ]
+            },
+            'exhibit3': {
+                title: "Subtitle Reading Speed (CPS)",
+                source: "These are skills used in law, journalism, public policy, and even community leadership.",
+                cards: [
+                    {
+                        model: "Set C (Gemini 3)", badge: "FASTEST (107c)", badgeColor: "text-neon-emerald border-neon-emerald",
+                        text: "Yeh kaushal kanoon, patrakaarita, sarvajanik neeti aur saamudaayik netritva mein bhi upyog kiye jaate hain.",
+                        analysis: "Highly optimised. Direct grammatical structure yields the lowest character count."
+                    },
+                    {
+                        model: "Set F (GPT-4o)", badge: "FAST (119c)", badgeColor: "text-neon-orange border-neon-orange",
+                        text: "Ye kaushal kanoon, patrakaarita, saarvajanik neeti aur yahan tak ki samudaayik netritva mein bhi upyog kiye jaate hain.",
+                        analysis: "Excellent pacing. GPT-4o produces a very tight, concise sentence, proving highly capable for subtitle generation."
+                    },
+                    {
+                        model: "Set D (Gemma Offline)", badge: "VERBOSE (152c)", badgeColor: "text-slate-500 border-slate-600",
+                        text: "Ye ve kaushal hain jinka upyog kaanoon, patrakaarita, lok neeti aur yahaan tak ki saamudaayik netritva mein bhi kiya jaata hai.",
+                        analysis: "Passive and unnecessarily lengthy. Eats up screen real estate and reading time."
+                    }
+                ]
+            }
+        };
+
+        function loadExhibit(exhibitId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            const container = document.getElementById('exhibit-content-area');
+            const data = exhibitData[exhibitId];
+
+            container.style.opacity = 0;
+            
+            setTimeout(() => {
+                let html = `
+                    <div class="mb-8">
+                        <h3 class="text-xl font-heading font-bold text-white mb-4">${data.title}</h3>
+                        <div class="bg-space-900 border border-space-700 p-4 rounded-xl relative">
+                            <span class="absolute top-0 right-4 transform -translate-y-1/2 bg-space-800 text-[10px] uppercase font-bold text-slate-400 px-2 py-1 rounded border border-space-700">Source English</span>
+                            <p class="text-slate-300 font-medium italic text-lg">"${data.source}"</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                `;
+
+                data.cards.forEach(card => {
+                    html += `
+                        <div class="bg-space-800/50 border border-space-700 rounded-xl p-6 flex flex-col h-full hover:border-space-600 transition-colors">
+                            <div class="flex justify-between items-start mb-4 border-b border-space-700/50 pb-3">
+                                <h4 class="font-bold text-white font-heading text-sm">${card.model}</h4>
+                                <span class="text-[10px] font-bold border px-2 py-1 rounded ${card.badgeColor} bg-space-900/50 shadow-sm">${card.badge}</span>
+                            </div>
+                            <p class="text-slate-400 italic mb-6 flex-grow text-[15px] leading-relaxed">"${card.text}"</p>
+                            <div class="bg-space-900 p-4 rounded-lg border border-space-700 text-xs text-slate-300">
+                                <strong class="text-neon-cyan block mb-1 uppercase tracking-wider text-[10px]">Linguistic Analysis:</strong>
+                                ${card.analysis}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+                container.innerHTML = html;
+                container.style.transition = "opacity 0.3s ease";
+                container.style.opacity = 1;
+            }, 150);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstTab = document.querySelector('.tab-btn');
+            if(firstTab) firstTab.click();
+        });
+    </script>
+</body>
+</html>
