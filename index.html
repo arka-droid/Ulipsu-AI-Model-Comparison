@@ -189,13 +189,13 @@
             <div class="max-w-[980px] mx-auto">
                 <p class="text-xs font-heading text-apple-muted80 uppercase tracking-widest mb-6">Last Updated: April 2026</p>
                 <h1 class="text-display-lg md:text-display-hero font-heading text-apple-ink mb-2 tracking-tight-apple">
-                    Evaluating AI Models For Translation
+                    Evaluating AI Models For SRT Translation
                 </h1>
                 <h2 class="text-display-md font-heading text-apple-action mb-8 tracking-tight-apple">
                     Ft. ILMs
                 </h2>
                 <p class="text-body-base text-apple-muted max-w-2xl mx-auto">
-                    Comprehensive tracking of pedagogical utility, reading constraints (CPS), and academic register across Gemini, GPT-5.5, Minimax, Gemma, and GPT-4o for Interactive Learning Modules.
+                    Comprehensive tracking of pedagogical utility, reading constraints (CPS), and academic register across Gemini, GPT-5.5, Minimax, Gemma, GPT-4o, and Sarvam AI for Interactive Learning Modules.
                 </p>
             </div>
         </section>
@@ -253,9 +253,9 @@
                     <p class="text-body-base text-apple-muted mt-2">Overall suitability scores, analytical summaries, and preferred use cases.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Rank 1 -->
-                    <div class="apple-card p-6 flex flex-col h-full items-center text-center">
+                    <div class="apple-card p-6 flex flex-col h-full items-center text-center border-[#0A84FF]/30">
                         <div class="text-[10px] font-heading font-bold uppercase tracking-widest text-apple-muted80 mb-2">Rank 1</div>
                         <div class="chart-container-small w-24 h-24 mb-4">
                             <canvas id="scoreChartC" aria-label="Donut chart showing 96% score for Gemini 3" role="img"></canvas>
@@ -305,7 +305,7 @@
                         <div class="chart-container-small w-24 h-24 mb-4">
                             <canvas id="scoreChartD" aria-label="Donut chart showing 75% score for Gemma-4" role="img"></canvas>
                         </div>
-                        <h3 class="text-[21px] font-heading text-apple-ink mb-1">Gemma-4</h3>
+                        <h3 class="text-[21px] font-heading text-apple-muted mb-1">Gemma-4</h3>
                         <p class="text-[12px] text-apple-muted48 uppercase tracking-widest mb-4">Set D &middot; Offline</p>
                         <p class="text-[14px] text-apple-muted80 leading-relaxed mb-6 flex-grow">Mechanically sound structure, hampered by colloquial lexical choices unsuitable for academia.</p>
                         <div class="w-full pt-4 border-t border-apple-hairline text-left">
@@ -330,14 +330,29 @@
                     </div>
 
                     <!-- Rank 6 -->
-                    <div class="apple-card bg-apple-tile2 p-6 flex flex-col h-full items-center text-center opacity-70">
+                    <div class="apple-card bg-apple-tile2 p-6 flex flex-col h-full items-center text-center opacity-60">
                         <div class="text-[10px] font-heading font-bold uppercase tracking-widest text-apple-muted48 mb-2">Rank 6</div>
+                        <div class="chart-container-small w-24 h-24 mb-4">
+                            <canvas id="scoreChartG" aria-label="Donut chart showing 48% score for Sarvam AI" role="img"></canvas>
+                        </div>
+                        <h3 class="text-[21px] font-heading text-apple-muted mb-1">Sarvam AI</h3>
+                        <p class="text-[12px] text-apple-muted48 uppercase tracking-widest mb-4">Set G &middot; Indic Native</p>
+                        <p class="text-[14px] text-apple-muted80 leading-relaxed mb-6 flex-grow">Highly cost-effective but exhibits severe grammatical flaws and inappropriate code-switching.</p>
+                        <div class="w-full pt-4 border-t border-apple-hairline text-left">
+                            <span class="block text-[10px] font-heading uppercase tracking-widest text-apple-muted48 mb-1">Use Case</span>
+                            <span class="text-[14px] text-apple-muted">Draft generation only. Needs heavy edits.</span>
+                        </div>
+                    </div>
+
+                    <!-- Rank 7 -->
+                    <div class="apple-card bg-apple-tile2 p-6 flex flex-col h-full items-center text-center opacity-50 md:col-span-2 lg:col-span-1">
+                        <div class="text-[10px] font-heading font-bold uppercase tracking-widest text-apple-muted48 mb-2">Rank 7</div>
                         <div class="chart-container-small w-24 h-24 mb-4">
                             <canvas id="scoreChartA" aria-label="Donut chart showing 45% score for GPT 5.5" role="img"></canvas>
                         </div>
-                        <h3 class="text-[21px] font-heading text-apple-muted mb-1">Set A</h3>
-                        <p class="text-[12px] text-apple-muted48 uppercase tracking-widest mb-4">GPT 5.5 &middot; Eng+Hin Mix</p>
-                        <p class="text-[14px] text-apple-muted80 leading-relaxed mb-6 flex-grow">Relies heavily on transliteration, failing to provide the essential Hindi vocabulary required for a proper educational translation.</p>
+                        <h3 class="text-[21px] font-heading text-apple-muted mb-1">GPT 5.5</h3>
+                        <p class="text-[12px] text-apple-muted48 uppercase tracking-widest mb-4">Set A &middot; Eng+Hin Mix</p>
+                        <p class="text-[14px] text-apple-muted80 leading-relaxed mb-6 flex-grow">Relies heavily on transliteration, failing to provide the essential Hindi vocabulary required for education.</p>
                         <div class="w-full pt-4 border-t border-apple-hairline text-left">
                             <span class="block text-[10px] font-heading uppercase tracking-widest text-apple-muted48 mb-1">Use Case</span>
                             <span class="text-[14px] text-apple-muted">Casual conversational media only.</span>
@@ -359,13 +374,13 @@
                     <!-- Radar -->
                     <div class="apple-card p-8 flex flex-col">
                         <h3 class="text-[21px] font-heading text-apple-ink mb-1">Parameter Benchmarking</h3>
-                        <p class="text-[14px] text-apple-muted80 mb-8">Compares dimensions of the top AI models.</p>
+                        <p class="text-[14px] text-apple-muted80 mb-8">Compares dimensions of the evaluated AI models.</p>
                         
                         <div class="chart-container-medium flex-grow w-full">
-                            <canvas id="radarChart" aria-label="Radar chart comparing Gemini, GPT-5.5, GPT-4o, and Minimax across five parameters" role="img"></canvas>
+                            <canvas id="radarChart" aria-label="Radar chart comparing models across five parameters" role="img"></canvas>
                         </div>
                         <div class="mt-8 pt-4 border-t border-apple-hairline text-[14px] text-apple-muted80 leading-relaxed">
-                            <strong class="text-apple-ink font-heading font-medium">Summary:</strong> Gemini 3 holds a distinct advantage in Pedagogy and Accuracy. GPT-5.5+ leads in Academic Tone. GPT-4o shows strong pacing but drops in Tone due to literal translation errors. Minimax struggles with pacing and tone appropriateness.
+                            <strong class="text-apple-ink font-heading font-medium">Summary:</strong> Gemini 3 holds a distinct advantage in Pedagogy and Accuracy. GPT-5.5+ leads in Academic Tone. Sarvam AI struggles significantly with Grammar and Tone.
                         </div>
                     </div>
 
@@ -378,7 +393,7 @@
                             <canvas id="cpsBarChart" aria-label="Bar chart showing character counts." role="img"></canvas>
                         </div>
                         <div class="mt-8 pt-4 border-t border-apple-hairline text-[14px] text-apple-muted80 leading-relaxed">
-                            <strong class="text-apple-ink font-heading font-medium">Data Insight:</strong> <span class="text-apple-action">Gemini 3 (107 chars)</span> is the most concise. <span class="text-apple-ink">GPT-4o (119 chars)</span> and <span class="text-apple-muted80">Minimax (120 chars)</span> also perform well, significantly outpacing older variants like Set D (152 chars).
+                            <strong class="text-apple-ink font-heading font-medium">Data Insight:</strong> <span class="text-apple-action">Gemini 3 (107 chars)</span> is the most concise. <span class="text-[#8b5cf6] font-bold">Sarvam AI (118 chars)</span> and <span class="text-apple-ink">GPT-4o (119 chars)</span> also perform well, significantly outpacing older variants like Set D (152 chars).
                         </div>
                     </div>
                 </div>
@@ -416,7 +431,12 @@
                             <span class="block text-[12px] text-apple-muted80 font-normal">Offline LLM</span>
                         </button>
 
-                        <button class="btn-utility explorer-tab-btn flex-shrink-0" data-target="setD" id="tab-setD" role="tab" aria-selected="false" aria-controls="panel-setD" onclick="window.switchOutputTab(this, 'setD')">
+                        <button class="btn-utility explorer-tab-btn flex-shrink-0" data-target="setG" id="tab-setG" role="tab" aria-selected="false" aria-controls="panel-setG" onclick="window.switchOutputTab(this, 'setG')">
+                            <span class="block text-apple-ink font-heading mb-1">Set G: Sarvam AI</span>
+                            <span class="block text-[12px] text-apple-muted80 font-normal">Indic Native</span>
+                        </button>
+
+                        <button class="btn-utility explorer-tab-btn flex-shrink-0 opacity-70" data-target="setD" id="tab-setD" role="tab" aria-selected="false" aria-controls="panel-setD" onclick="window.switchOutputTab(this, 'setD')">
                             <span class="block text-apple-muted font-heading mb-1">Set D: Gemma-4</span>
                             <span class="block text-[12px] text-apple-muted48 font-normal">Offline LLM</span>
                         </button>
@@ -525,6 +545,29 @@ Humne paanch mahatvapurn tatvon ka bhi anveshan kiya jo ek khule patr ko mazboot
 Ek sammaanajanak svar, ek spasht sandesh, aapke tark ka samarthan karne ke liye saakshya, karvaai ke liye seedha aahvaan aur thodi vinamrata.
                             </div>
 
+                            <!-- Panel G -->
+                            <div id="panel-setG" class="content-panel" role="tabpanel" aria-labelledby="tab-setG">
+<span class="text-apple-muted48">1</span>
+<span class="text-[#8b5cf6] font-bold">00:00:00,000 --> 00:00:15,000</span>
+Is ILM mein hamne dekha ki jungle mein kachra rakhna jaisi ek saral chinta kaise karvaai ka kaaran ban sakti hai.
+
+<span class="text-apple-muted48">2</span>
+<span class="text-[#8b5cf6] font-bold">00:00:15,000 --> 00:00:24,000</span>
+Hamein seekha ki kaise khule patra aapko apne vicharon ko spasht roop se vyakt karne mein madad karte hain aur kaise yaachikayein saarvajanik samarthan dikhaati hain.
+
+<span class="text-apple-muted48">3</span>
+<span class="text-[#8b5cf6] font-bold">00:00:24,000 --> 00:00:28,000</span>
+Ye sab milkar aapki aawaaz sunaane ke liye shaktishaali upkaran hain.
+
+<span class="text-apple-muted48">4</span>
+<span class="text-[#8b5cf6] font-bold">00:00:28,000 --> 00:00:34,000</span>
+Hamne un paanch mukhya tatvon ki bhi khoj ki jo khule patra ko mazboot banaate hain.
+
+<span class="text-apple-muted48">5</span>
+<span class="text-[#8b5cf6] font-bold">00:00:34,000 --> 00:00:44,000</span>
+Ek sammaanajanak lehja, ek spasht sandesh, apna paksh samarthan karne ke liye saboot, ek seedha call to action aur thoda courtesy.
+                            </div>
+
                             <!-- Panel D -->
                             <div id="panel-setD" class="content-panel" role="tabpanel" aria-labelledby="tab-setD">
 <span class="text-apple-muted48">1</span>
@@ -591,14 +634,11 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                         <button class="btn-pill evidence-tab-btn active" data-target="ev1" id="tab-ev1" role="tab" aria-selected="true" aria-controls="panel-ev1" onclick="window.switchEvidenceTab('ev1', this)">
                             1. Bridging Concepts
                         </button>
-                        <button class="btn-pill evidence-tab-btn" data-target="ev2" id="tab-ev2" role="tab" aria-selected="false" aria-controls="panel-ev2" onclick="window.switchEvidenceTab('ev2', this)">
-                            2. AI Literalism
-                        </button>
-                        <button class="btn-pill evidence-tab-btn" data-target="ev3" id="tab-ev3" role="tab" aria-selected="false" aria-controls="panel-ev3" onclick="window.switchEvidenceTab('ev3', this)">
-                            3. Reading Pacing
-                        </button>
                         <button class="btn-pill evidence-tab-btn" data-target="ev4" id="tab-ev4" role="tab" aria-selected="false" aria-controls="panel-ev4" onclick="window.switchEvidenceTab('ev4', this)">
-                            4. Academic Register
+                            2. Academic Register
+                        </button>
+                        <button class="btn-pill evidence-tab-btn" data-target="ev2" id="tab-ev2" role="tab" aria-selected="false" aria-controls="panel-ev2" onclick="window.switchEvidenceTab('ev2', this)">
+                            3. AI Literalism
                         </button>
                     </div>
 
@@ -609,15 +649,15 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                         <div id="panel-ev1" class="content-panel active-panel" role="tabpanel" aria-labelledby="tab-ev1">
                             <div class="mb-10 max-w-3xl">
                                 <h3 class="text-[21px] font-heading text-apple-ink mb-4">Domain Terminology & Scaffolding</h3>
-                                <p class="text-body-base text-apple-muted80 italic">"We learned how open letters help express your ideas clearly and how petitions show public support."</p>
+                                <p class="text-body-base text-apple-muted80 italic">We learned how open letters help express your ideas clearly and how petitions show public support.</p>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
                                     <div class="flex justify-between items-center mb-4">
                                         <h4 class="font-heading font-medium text-apple-ink text-sm">Set C (Gemini 3)</h4>
                                         <span class="text-[10px] text-apple-action uppercase tracking-widest font-heading font-bold">Winner</span>
                                     </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"Humne seekha ki khula patra (open letter) aapke vichaaron ko spasht roop se vyakt karne mein kaise madad karta hai..."</p>
+                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">Humne seekha ki khula patra (open letter) aapke vichaaron ko spasht roop se vyakt karne mein kaise madad karta hai...</p>
                                     <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
                                         Perfect educational design. Uses brackets to link the Hindi translation back to the English source terminology.
                                     </div>
@@ -627,7 +667,7 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                                         <h4 class="font-heading font-medium text-apple-ink text-sm">Set F (GPT-4o)</h4>
                                         <span class="text-[10px] text-apple-ink uppercase tracking-widest font-heading font-bold">Pure Hindi</span>
                                     </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"Humne seekha ki khule patra aapki baat ko spasht roop se vyakt karne mein kaise madad kar sakte hain..."</p>
+                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">Humne seekha ki khule patra aapki baat ko spasht roop se vyakt karne mein kaise madad kar sakte hain...</p>
                                     <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
                                         Provides a highly fluent pure Hindi translation. Identical in approach to Set B, bypassing educational scaffolding entirely.
                                     </div>
@@ -637,107 +677,37 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                                         <h4 class="font-heading font-medium text-apple-muted text-sm">Set A (GPT 5.5 - Eng+Hin)</h4>
                                         <span class="text-[10px] text-apple-muted48 uppercase tracking-widest font-heading font-bold">Rejected</span>
                                     </div>
-                                    <p class="text-apple-muted48 text-[14px] leading-relaxed italic mb-8 flex-grow">"Humne seekha ki kaise open letters aapko apne vicharon ko..."</p>
+                                    <p class="text-apple-muted48 text-[14px] leading-relaxed italic mb-8 flex-grow">Humne seekha ki kaise open letters aapko apne vicharon ko...</p>
                                     <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
-                                        Relies heavily on transliteration. It assumes the student already comprehends the English vocabulary.
+                                        Relies heavily on transliteration. Assumes the student already comprehends the English vocabulary.
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Evidence 2 -->
-                        <div id="panel-ev2" class="content-panel" role="tabpanel" aria-labelledby="tab-ev2">
-                            <div class="mb-10 max-w-3xl">
-                                <h3 class="text-[21px] font-heading text-apple-ink mb-4">The Flaw of AI Literalism</h3>
-                                <p class="text-body-base text-apple-muted80 italic">"A respectful tone, a clear message, evidence to support your argument, a direct call to action, and a touch of politeness."</p>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
+                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1 opacity-70 border-t-2 border-t-[#8b5cf6]">
                                     <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set B (GPT 5.5+)</h4>
-                                        <span class="text-[10px] text-apple-action uppercase tracking-widest font-heading font-bold">Winner</span>
+                                        <h4 class="font-heading font-medium text-apple-muted text-sm">Set G (Sarvam)</h4>
+                                        <span class="text-[10px] text-[#8b5cf6] uppercase tracking-widest font-heading font-bold">Grammar Flaw</span>
                                     </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"...kaarvaai ke liye seedha aahvaan aur shishtata ka sparsh."</p>
+                                    <p class="text-apple-muted48 text-[14px] leading-relaxed italic mb-8 flex-grow">Hamein seekha ki kaise khule patra aapko apne vicharon ko...</p>
                                     <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
-                                        Demonstrates brilliant handling of idioms. Translates 'touch of politeness' idiomatically as 'shishtata ka sparsh', maintaining academic dignity.
-                                    </div>
-                                </div>
-                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set F (GPT-4o)</h4>
-                                        <span class="text-[10px] text-[#f43f5e] uppercase tracking-widest font-heading font-bold">Literal Flaw</span>
-                                    </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"...kaarvaai ka ek seedha aahvaan aur ek sparshbhari vinamrata."</p>
-                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
-                                        <span class="text-[#f43f5e] font-bold">CRITICAL FLAW:</span> 'Sparshbhari' literally implies 'full of physical touch'. Translating the idiom literally results in an awkward phrase.
-                                    </div>
-                                </div>
-                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set C (Gemini 3)</h4>
-                                        <span class="text-[10px] text-apple-link uppercase tracking-widest font-heading font-bold">Capable</span>
-                                    </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"...seedha kaarvaai ka aahvaan aur vinamrata ka sparsh."</p>
-                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
-                                        Uses 'vinamrata ka sparsh'. Similar to Set B, it correctly adapts the idiom without sounding robotic or physically literal.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Evidence 3 -->
-                        <div id="panel-ev3" class="content-panel" role="tabpanel" aria-labelledby="tab-ev3">
-                            <div class="mb-10 max-w-3xl">
-                                <h3 class="text-[21px] font-heading text-apple-ink mb-4">Subtitle Reading Speed (CPS)</h3>
-                                <p class="text-body-base text-apple-muted80 italic">"These are skills used in law, journalism, public policy, and even community leadership."</p>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set C (Gemini 3)</h4>
-                                        <span class="text-[10px] text-apple-action uppercase tracking-widest font-heading font-bold">Fastest (107c)</span>
-                                    </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"Yeh kaushal kanoon, patrakaarita, sarvajanik neeti aur saamudaayik netritva mein bhi upyog kiye jaate hain."</p>
-                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
-                                        Highly optimised pacing. A direct grammatical structure yields the absolute lowest character count.
-                                    </div>
-                                </div>
-                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set F (GPT-4o)</h4>
-                                        <span class="text-[10px] text-apple-link uppercase tracking-widest font-heading font-bold">Fast (119c)</span>
-                                    </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"Ye kaushal kanoon, patrakaarita, saarvajanik neeti aur yahan tak ki samudaayik netritva mein bhi upyog kiye jaate hain."</p>
-                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
-                                        Excellent pacing. GPT-4o produces a very tight, concise sentence, proving highly capable for subtitle generation.
-                                    </div>
-                                </div>
-                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1 opacity-70">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h4 class="font-heading font-medium text-apple-muted text-sm">Set D (Gemma)</h4>
-                                        <span class="text-[10px] text-apple-muted48 uppercase tracking-widest font-heading font-bold">Verbose (152c)</span>
-                                    </div>
-                                    <p class="text-apple-muted48 text-[14px] leading-relaxed italic mb-8 flex-grow">"Ye ve kaushal hain jinka upyog kaanoon, patrakaarita, lok neeti aur yahaan tak ki saamudaayik netritva mein bhi kiya jaata hai."</p>
-                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
-                                        Appears passive and unnecessarily lengthy. The structure eats up screen real estate and critical viewer reading time.
+                                        Syntactically incorrect ('Hamein seekha' instead of 'Hamne'). Lacks structural coherence required for learning materials.
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Evidence 4 -->
-                        <div id="panel-ev4" class="content-panel" role="tabpanel" aria-labelledby="tab-ev4">
+                        <div id="panel-ev4" class="content-panel hidden-panel" role="tabpanel" aria-labelledby="tab-ev4">
                             <div class="mb-10 max-w-3xl">
                                 <h3 class="text-[21px] font-heading text-apple-ink mb-4">Academic Register & Tone Appropriateness</h3>
-                                <p class="text-body-base text-apple-muted80 italic">"A respectful tone, a clear message, evidence to support your argument..."</p>
+                                <p class="text-body-base text-apple-muted80 italic">A respectful tone, a clear message, evidence to support your argument...</p>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
                                     <div class="flex justify-between items-center mb-4">
                                         <h4 class="font-heading font-medium text-apple-ink text-sm">Set B (GPT 5.5+)</h4>
                                         <span class="text-[10px] text-apple-action uppercase tracking-widest font-heading font-bold">Winner</span>
                                     </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"Ek sammanjanak swar, ek spasht sandesh, apne tark ke samarthan mein pramaan..."</p>
+                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">Ek sammanjanak swar, ek spasht sandesh, apne tark ke samarthan mein pramaan...</p>
                                     <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
                                         Superb academic balance. Selects 'pramaan', preserving a formal yet entirely accessible educational register.
                                     </div>
@@ -747,7 +717,7 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                                         <h4 class="font-heading font-medium text-apple-ink text-sm">Set E (Minimax)</h4>
                                         <span class="text-[10px] text-apple-muted80 uppercase tracking-widest font-heading font-bold">Hyper-Formal</span>
                                     </div>
-                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">"Ek sammaanajanak svar, ek spasht sandesh, aapke tark ka samarthan karne ke liye saakshya..."</p>
+                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">Ek sammaanajanak svar, ek spasht sandesh, aapke tark ka samarthan karne ke liye saakshya...</p>
                                     <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
                                         Employs highly formal vocabulary ('saakshya'), unnecessarily elevating the text to a legal standard and increasing cognitive load.
                                     </div>
@@ -757,9 +727,59 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                                         <h4 class="font-heading font-medium text-apple-muted text-sm">Set D (Gemma)</h4>
                                         <span class="text-[10px] text-apple-muted48 uppercase tracking-widest font-heading font-bold">Colloquial Flaw</span>
                                     </div>
-                                    <p class="text-apple-muted48 text-[14px] leading-relaxed italic mb-8 flex-grow">"...jungle mein koode-karkat jaisi ek saadharan chinta..."</p>
+                                    <p class="text-apple-muted48 text-[14px] leading-relaxed italic mb-8 flex-grow">...jungle mein koode-karkat jaisi ek saadharan chinta...</p>
                                     <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
                                         Drops into colloquial slang ('koode-karkat'), breaking the formal academic tone required for Interactive Learning Modules.
+                                    </div>
+                                </div>
+                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1 opacity-70 border-t-2 border-t-[#8b5cf6]">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h4 class="font-heading font-medium text-apple-muted text-sm">Set G (Sarvam)</h4>
+                                        <span class="text-[10px] text-[#8b5cf6] uppercase tracking-widest font-heading font-bold">Code-Switch Flaw</span>
+                                    </div>
+                                    <p class="text-apple-muted48 text-[14px] leading-relaxed italic mb-8 flex-grow">...apna paksh samarthan karne ke liye saboot, ek seedha call to action aur thoda courtesy.</p>
+                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
+                                        Randomly inserts untranslated English phrases (call to action, courtesy) within a Hindi sentence structure, destroying the academic tone.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evidence 2 -->
+                        <div id="panel-ev2" class="content-panel hidden-panel" role="tabpanel" aria-labelledby="tab-ev2">
+                            <div class="mb-10 max-w-3xl">
+                                <h3 class="text-[21px] font-heading text-apple-ink mb-4">The Flaw of AI Literalism</h3>
+                                <p class="text-body-base text-apple-muted80 italic">A respectful tone, a clear message, evidence to support your argument, a direct call to action, and a touch of politeness.</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set B (GPT 5.5+)</h4>
+                                        <span class="text-[10px] text-apple-action uppercase tracking-widest font-heading font-bold">Winner</span>
+                                    </div>
+                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">...kaarvaai ke liye seedha aahvaan aur shishtata ka sparsh.</p>
+                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
+                                        Demonstrates brilliant handling of idioms. Translates 'touch of politeness' idiomatically as 'shishtata ka sparsh', maintaining academic dignity.
+                                    </div>
+                                </div>
+                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1 border-t-2 border-t-neon-rose">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set F (GPT-4o)</h4>
+                                        <span class="text-[10px] text-neon-rose uppercase tracking-widest font-heading font-bold">Literal Flaw</span>
+                                    </div>
+                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">...kaarvaai ka ek seedha aahvaan aur ek sparshbhari vinamrata.</p>
+                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
+                                        <span class="text-neon-rose font-medium">CRITICAL FLAW:</span> 'Sparshbhari' literally implies 'full of physical touch'. Translating the idiom literally results in an awkward phrase.
+                                    </div>
+                                </div>
+                                <div class="apple-card p-6 flex flex-col h-full bg-apple-tile1">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h4 class="font-heading font-medium text-apple-ink text-sm">Set C (Gemini 3)</h4>
+                                        <span class="text-[10px] text-apple-link uppercase tracking-widest font-heading font-bold">Capable</span>
+                                    </div>
+                                    <p class="text-apple-muted text-[14px] leading-relaxed italic mb-8 flex-grow">...seedha kaarvaai ka aahvaan aur vinamrata ka sparsh.</p>
+                                    <div class="text-[13px] text-apple-muted80 border-t border-apple-hairline pt-4">
+                                        Uses 'vinamrata ka sparsh'. Similar to Set B, it correctly adapts the idiom without sounding robotic or physically literal.
                                     </div>
                                 </div>
                             </div>
@@ -783,10 +803,10 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                     <div class="flex flex-col justify-center">
                         <h3 class="text-[24px] font-heading text-apple-ink mb-6">Strategic Localisation at Scale</h3>
                         <p class="text-body-base text-apple-muted leading-relaxed mb-6">
-                            When selecting a Large Language Model for enterprise-scale Interactive Learning Modules, linguistic precision must be balanced against unit economics. Our audit definitively positions <strong class="text-apple-ink">Gemini 3</strong> as the optimal solution. It uniquely integrates essential pedagogical scaffolding natively into its output, while remaining exceptionally cost-efficient.
+                            When selecting a Large Language Model for enterprise-scale Interactive Learning Modules, linguistic precision must be balanced against unit economics. Our audit definitively positions <strong class="text-apple-ink">Gemini 3</strong> as the optimal solution. It uniquely integrates essential pedagogical scaffolding natively into its output, while remaining exceptionally cost-effective.
                         </p>
                         <p class="text-body-base text-apple-muted leading-relaxed">
-                            While <strong class="text-apple-ink">GPT 5.5+</strong> and <strong class="text-apple-ink">GPT-4o</strong> exhibit extraordinary syntactic fluency, they operate at a substantial pricing premium. They are best reserved for high-stakes, low-volume translation environments rather than automated, mass-pipeline generation.
+                            While <strong class="text-apple-ink">GPT 5.5+</strong> and <strong class="text-apple-ink">GPT-4o</strong> exhibit extraordinary syntactic fluency, they operate at a substantial pricing premium. <strong class="text-[#8b5cf6]">Sarvam AI</strong> offers a low-cost alternative, but its severe syntactical and register errors make it unsuitable for production without heavy human editing.
                         </p>
                     </div>
 
@@ -859,7 +879,6 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -875,7 +894,6 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
 
     <!-- Safe Bootloader -->
     <script>
-        // Tab switching functions
         window.switchOutputTab = function(btn, id) {
             const buttons = btn.parentElement.querySelectorAll('button');
             buttons.forEach(b => b.classList.remove('active'));
@@ -899,7 +917,6 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
         }
 
         function bootApp() {
-            // Navigation Logic
             const menuBtn = document.getElementById('menu-btn');
             const navOverlay = document.getElementById('nav-menu');
             const navLinks = document.querySelectorAll('.nav-item');
@@ -927,7 +944,6 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                 });
             });
 
-            // Scroll Spy
             const sections = document.querySelectorAll('section[id]');
             window.addEventListener('scroll', () => {
                 let current = '';
@@ -946,7 +962,6 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                 });
             });
 
-            // Chart Initialization
             let chartInitAttempts = 0;
             function initCharts() {
                 if (typeof Chart === 'undefined') {
@@ -997,13 +1012,13 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                     });
                 }
                 
-                // Colors matched to Apple aesthetic
-                createDonut('scoreChartC', 96, '#0A84FF'); // Set C
-                createDonut('scoreChartB', 88, '#6EB8FF'); // Set B
-                createDonut('scoreChartF', 82, '#F5F5F7'); // Set F
-                createDonut('scoreChartD', 75, '#8E8E93'); // Set D
-                createDonut('scoreChartE', 58, '#8E8E93'); // Set E
-                createDonut('scoreChartA', 45, '#636366'); // Set A
+                createDonut('scoreChartC', 96, '#0A84FF'); 
+                createDonut('scoreChartB', 88, '#6EB8FF'); 
+                createDonut('scoreChartF', 82, '#F5F5F7'); 
+                createDonut('scoreChartD', 75, '#8E8E93'); 
+                createDonut('scoreChartE', 58, '#8E8E93'); 
+                createDonut('scoreChartG', 48, '#8b5cf6');
+                createDonut('scoreChartA', 45, '#636366'); 
 
                 const canvasRadar = document.getElementById('radarChart');
                 if(canvasRadar) {
@@ -1015,7 +1030,7 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                                 { label: 'Gemini 3', data: [98, 92, 95, 90, 100], backgroundColor: 'rgba(10, 132, 255, 0.1)', borderColor: '#0A84FF', pointBackgroundColor: '#0A84FF', borderWidth: 1.5 },
                                 { label: 'GPT 5.5+', data: [40, 98, 90, 98, 85], backgroundColor: 'rgba(110, 184, 255, 0.05)', borderColor: '#6EB8FF', pointBackgroundColor: '#6EB8FF', borderWidth: 1.5 },
                                 { label: 'GPT-4o', data: [40, 85, 93, 80, 85], backgroundColor: 'rgba(245, 245, 247, 0.05)', borderColor: '#F5F5F7', pointBackgroundColor: '#F5F5F7', borderWidth: 1.5, borderDash: [4, 4] },
-                                { label: 'Minimax', data: [30, 60, 80, 85, 75], backgroundColor: 'rgba(142, 142, 147, 0.05)', borderColor: '#8E8E93', pointBackgroundColor: '#8E8E93', borderWidth: 1.5, borderDash: [2, 2] }
+                                { label: 'Sarvam AI', data: [40, 45, 85, 30, 40], backgroundColor: 'rgba(139, 92, 246, 0.05)', borderColor: '#8b5cf6', pointBackgroundColor: '#8b5cf6', borderWidth: 1.5, borderDash: [2, 2] }
                             ]
                         },
                         options: {
@@ -1040,12 +1055,12 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                     new Chart(canvasBar.getContext('2d'), {
                         type: 'bar',
                         data: {
-                            labels: ['Set C (Gemini)', 'Set F (GPT-4o)', 'Set E (Minimax)', 'Set B (GPT-5.5+)', ['Set A', '(GPT 5.5 - Eng+Hin)'], 'Set D (Gemma)'],
+                            labels: ['Set C (Gemini)', 'Set F (GPT-4o)', 'Set G (Sarvam)', 'Set E (Minimax)', 'Set B (GPT-5.5+)', ['Set A', '(GPT 5.5 - Eng+Hin)'], 'Set D (Gemma)'],
                             datasets: [{
                                 label: 'Characters',
-                                data: [107, 119, 120, 125, 133, 152],
-                                backgroundColor: ['#0A84FF', '#F5F5F7', '#A1A1A6', '#6EB8FF', '#636366', '#8E8E93'],
-                                borderColor: ['#0A84FF', '#F5F5F7', '#A1A1A6', '#6EB8FF', '#636366', '#8E8E93'],
+                                data: [107, 119, 118, 120, 125, 133, 152],
+                                backgroundColor: ['#0A84FF', '#F5F5F7', '#8b5cf6', '#A1A1A6', '#6EB8FF', '#636366', '#8E8E93'],
+                                borderColor: ['#0A84FF', '#F5F5F7', '#8b5cf6', '#A1A1A6', '#6EB8FF', '#636366', '#8E8E93'],
                                 borderWidth: 1, borderRadius: 4, barPercentage: 0.5
                             }]
                         },
@@ -1054,7 +1069,6 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                             responsive: true, 
                             maintainAspectRatio: false,
                             layout: {
-                                // Left padding 0 so we rely entirely on the scale.width below
                                 padding: { left: 0, right: 16 } 
                             },
                             scales: {
@@ -1063,7 +1077,6 @@ Ek sammanjanak lahja, ek spasht sandesh, aapki baat ka samarthan karne ke liye s
                                     grid: { display: false }, 
                                     ticks: { font: { family: 'Montserrat', weight: '500', size: 11 }, color: '#F5F5F7', padding: 8, align: 'center' },
                                     afterFit: function(scaleInstance) {
-                                        // Forcing a hard minimum width of 165 ensures the multi-line label "Set A \n (GPT 5.5 - Eng+Hin)" will absolutely not clip the canvas edge.
                                         scaleInstance.width = 165; 
                                     }
                                 }
